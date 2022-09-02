@@ -8,7 +8,7 @@ var token = 'token';
 var bot = new TelegramBot(token, {polling: true});
 bot.on("polling_error", (err) => console.log(err));
 
- cha3 =-1001297470507
+ idChannel =-1001297470507
    
 bot.on("message",function(msg){
 
@@ -25,7 +25,7 @@ bot.on("message",function(msg){
   }
     
 
-//رساله بالشخصي
+//بالخاص
   if(msg.text  && msg.chat.type==='private'){
 
     bot.sendMessage(msg.chat.id,'   '+"مطور بوت     "+' @'+'AliS219',
@@ -44,7 +44,7 @@ if(msg  ){
 
 
  
-  bot.getChatMember(cha3,msg.from.id)   
+  bot.getChatMember(idChannel,msg.from.id)   
  .then(res=>{
           //في حالة عدم وجود العضو في القناة left
   if(res.status==="left"){
@@ -64,7 +64,9 @@ if(msg  ){
                  }, 20 * 1000)}).catch(err => console.log(err))
                 }else{
                   //في حالة وجود العضوو بالقناة member
-                   if(res.status==="member"){ }
+                   if(res.status==="member"){ 
+ bot.sendMessage(msg.chat.id,"انت مشترك بالقناة بالفعل")
+                            }
                 }})
                
               }
